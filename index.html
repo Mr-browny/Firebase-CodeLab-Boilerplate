@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>Firebase Tutorials</title>
+        <!-- defer means the Documents loads before executing the js file attached to it -->
+    </head>
+<body id="body">
+    <div class="wrapper">
+
+        <!-- This will house the app's navigation bar -->
+        <div class="navBar">
+            <ul class="header">
+                <li class="header-image">
+                    <a href="#">
+                        <img src="img/logo.png" alt="Firebase Logo" class="logo">
+                    </a>
+                </li>
+                <li class="header-title">
+                    <h3> Firebase CodeLab '20 </h3>
+                </li>
+            </ul>
+            <ul class="links">
+                <button class="showNav" id="showNav">=</button>
+                <button class="hideNav" id="hideNav" style="display: none;">X</button>
+                <span id="navList"> 
+                <li> <a href="#" title="">Home</a> </li>
+                <li> <a href="#" title="">About</a> </li>
+                <li> <a href="#" title="">Contact Us</a> </li>
+                <li> <a href="#" title="">Login</a> </li>
+                <li> <a href="#" title="">Signup</a> </li>
+                </span>
+            </ul>
+        </div>
+        
+        <div class="clearFloat"></div> 
+        <!-- <input type="file" accept="image/*;capture=camera">
+        <video autoplay id="screenshot-video"></video>
+        <img src="" id="screenshot-img">
+        <canvas style="display:none;"></canvas>
+
+        <button id="capture-button" >Capture</button>
+        <button id="screenshot-button">ScreenShot</button> -->
+
+        <div class="content flex-grid">
+            <div class="registerFriend col">
+                <div id="registerForm" class="form" enctype="multipart/form-data">
+                    <input type="file" id="capture" onchange="checkImg()"  value="Capture" accept="image/*;capture=camera">
+                    <img src="img/user.png" alt="My Friend's Image" id="image">
+                    <hr style="margin: 2px auto;">
+                    <div class="form-group">
+                        <label for="Name"> Name: </label>
+                        <input type="text" id="name" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email"> Email: </label>
+                        <input type="email" id="email" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone Number"> Phone: </label>
+                        <input type="text" id="number" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Technology"> Technology: </label>
+                        <input type="text" id="technology" placeholder="" required>
+                    </div>
+                    <div class="form-group actionBtn">
+                        <button type="submit" onclick="registerUser()" id="register" >Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <hr style="width: 70%;"> -->
+
+            <!-- This is where your registered friend's will be displayed -->
+            <div class="friendsList col flex-grow">
+                <div class="card" id="card"> 
+                   <!--  <div class="card-content">
+                        <div class="card-image">
+                            <img src="img/user.png"  width="100%" height="150"> 
+                        </div>
+                        <div class="card-details">
+                            <div class="card-text">
+                                <label for="Name"> Name : George Ikwegbu </label>
+                            </div>
+                            <div class="card-text">
+                                <label for="Email"> Email : g.ikwegbu@gmail.com </label>
+                            </div>
+                            <div class="card-text">
+                                <label for="Phone Number"> Phone : 081o1570258</label>
+                            </div>
+                            <div class="card-text">
+                                <label for="Technology"> Technology : Front-End Web Dev </label>
+                            </div>
+                        </div>
+                    </div>
+                     -->
+                   
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span>
+                &copy;Firebase '20 Powered By Google Developers Group Umuahia 
+            </span>
+        </footer>
+        
+    </div>
+
+    
+    
+    <script src="js/style.js" defer></script>
+    <!-- <script src="js/captureImage.js" defer></script> -->
+</body>
+</html>

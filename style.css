@@ -1,0 +1,234 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    background-color: #eeeeee;
+    
+}
+
+/* This is for the navigation section */
+.navBar{
+    background-color: rgb(255, 152, 50);
+    color: white;
+    height: 60px;
+    /* margin-bottom: 20px; */
+}
+.navBar .logo{
+    width: 40px;
+    height: 40px;
+    padding: 5px;;
+}
+.navBar ul{
+    display: inline;
+}
+.navBar ul.header li{
+    display: inline;
+    float: left; 
+}
+.navBar ul.header li{
+    display: inline; 
+}
+.navBar ul.header li.header-image a img{
+    position: relative;
+}
+.navBar ul.header li.header-title{
+    position: relative;
+    top: 20px;
+    word-wrap: none;
+    word-spacing: 2px;
+    font-weight: 100px;
+}
+.navBar ul.links { 
+    float: right;
+}
+.navBar ul.links li{
+    display: inline; 
+    /* display: block; */
+}
+.navBar ul.links li a{
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    position: relative;
+    top: 20px; 
+    padding: 1em;
+    border-radius: 5px; 
+    transition: 0.3s all ease-in;
+}
+.navBar ul.links li a:hover{ 
+    background-color: rgb(246,130,13);
+    transition: 0.3s all ease-in;
+}
+.showNav,
+.hideNav{ 
+    display: none;
+}
+
+.clearFloat{
+    clear: both;
+}
+
+/* The content section */
+.flex-grid{ 
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    flex: 1;
+}
+.col.flex-grow{ 
+    flex-grow: 8;
+}
+
+/* This is the Register For section */
+.registerFriend{ 
+}
+.registerFriend .form{  
+    position: sticky;
+    padding: 1em; 
+    margin-left: 10px; 
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 32px;
+    background: linear-gradient(145deg, #ddd, #eee);
+    box-shadow: 13px 13px 12px #ddd, -13px -13px 12px #eee; 
+}  
+.registerFriend .form img{
+    border-radius: 100%;
+    margin: 10px 20px; 
+    width: 240px;
+    height: 240px; 
+    border: 2px solid rgb(255, 152, 50); 
+    position: relative;
+}
+.registerFriend .form #capture{
+    opacity: 0.6;
+    position: relative;
+    width: 90px;
+    top: 160px;
+    left: 90px;
+    border-radius: 5px;
+    background-color: rgb(255, 152, 50);
+    border: 2px solid rgb(255, 152, 50);
+    color: grey;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px grey;
+    transition: 0.2s all ease-in;
+    z-index: 1000;
+    padding: 5px;
+}
+.registerFriend .form #capture:hover{
+    box-shadow: 2px 4px 4px grey;
+    transition: 0.2s all ease-in;
+    
+}
+.registerFriend .form .form-group{
+    /* background-color: white; */
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 10px;
+}
+.registerFriend .form .form-group label{
+    font-size: 17px;
+}
+.registerFriend .form .form-group input{
+    /* grid-column: 1 / -1; */ 
+    padding: 2%;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+} 
+.registerFriend .form #register{
+    border-radius: 5px ;
+    color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 4px grey;
+    background-color: rgb(255, 152, 50);
+    transition: 0.2s all ease-in;
+    cursor: pointer;
+}
+
+.friendsList{ 
+    border-left: 10px solid white;
+}
+.card{
+    display: flex; 
+    flex-wrap: wrap-reverse;
+    align-content: space-between;
+}
+.card .card-content{
+    flex: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid #ddd; 
+    margin: 5px;  
+    white-space: nowrap;
+    background: linear-gradient(145deg, #ddd, #eee);
+    box-shadow: 5px 5px 12px #ddd, -5px -5px 12px #eee;  
+    transition: 0.3s;
+}
+.card .card-content:hover{
+    background: linear-gradient(145deg, #ddd, #eee); 
+    box-shadow: 0px 0px 0px #ddd, 0px 0px 0px #eee;  
+    transition: 0.1s;
+
+}
+.card .card-content .card-text{
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 2px;
+    font-weight: lighter;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer{
+    background-color: rgb(255, 152, 50);
+    padding: 0.8em;
+    position: fixed;
+    bottom: -1px;
+    width: 98%;
+    color: white;
+    text-align: center;
+}
+@media only screen and (max-width: 649px) { 
+    .showNav,
+    .hideNav{ 
+        position: relative;
+        top: -5px;
+        left: 90%;
+       display: block; 
+       padding: 2vw;
+       font-size: 3vh;
+       background-color: rgb(247, 135, 23);
+       color: white;
+       border: none; 
+       border-radius: 20px;
+       outline: none; 
+       cursor: pointer; 
+    } 
+    .navBar ul.links {  
+        clear: both;
+        z-index: 1000; 
+        width: 100%;
+        margin-top: -40px;
+        margin-bottom: 10px;
+    }
+    .navBar ul.links #navList{
+        display: none;
+    }
+    .navBar ul.links li{
+        /* display: none;  */
+        display: block;
+        background-color: rgb(247, 135, 23); 
+    }
+    .navBar ul.links li a{ 
+        display: block; 
+        position: inherit;   
+        white-space: nowrap;
+       
+    }
+}
