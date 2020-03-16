@@ -26,11 +26,9 @@
                 <button class="showNav" id="showNav">=</button>
                 <button class="hideNav" id="hideNav" style="display: none;">X</button>
                 <span id="navList"> 
-                <li> <a href="#" title="">Home</a> </li>
-                <li> <a href="#" title="">About</a> </li>
-                <li> <a href="#" title="">Contact Us</a> </li>
-                <li> <a href="#" title="">Login</a> </li>
-                <li> <a href="#" title="">Signup</a> </li>
+                <li> <a href="#" title="">Home</a> </li> 
+                <li> <a onclick="loginModal()"  href="#" title="">Login</a> </li>
+                <li> <a onclick="signupModal()" href="#" title="">Signup</a> </li>
                 </span>
             </ul>
         </div>
@@ -108,6 +106,46 @@
             </span>
         </footer>
         
+    </div>
+
+
+    <div class="modal" id="login" style="display: none;">
+        <div class="registerFriend col">
+            <div id="registerForm" class="form" enctype="multipart/form-data">
+                 
+                <div class="form-group">
+                    <label for="Username"> Username: </label>
+                    <input type="text" id="username" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="Password"> Password: </label>
+                    <input type="password" id="password" placeholder="" required>
+                </div>
+               
+                <div class="form-group actionBtn">
+                    <button type="submit" onclick="" id="register" >Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="signup" style="display: none;">
+        <div class="registerFriend col">
+            <div id="registerForm" class="form" enctype="multipart/form-data">
+                 
+                <div class="form-group">
+                    <label for="Username"> Username: </label>
+                    <input type="text" id="username" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="Password"> Password: </label>
+                    <input type="text" id="password" placeholder="" required>
+                </div>
+               
+                <div class="form-group actionBtn">
+                    <button type="submit" onclick="" id="register" >Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     

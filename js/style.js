@@ -101,6 +101,44 @@ function addElement(parentId, elementTag, elementId, html) {
     p.appendChild(newElement);
 }
 
+
+//Modal functions
+
+
+// var modal = document.getElementsByClassName("modal")
+var modalLogin = document.querySelector("#login")
+var modalSignup = document.querySelector("#signup")
+
+
+
+//Login Modal 
+function loginModal(){
+    modalSignup.style.display = 'none' 
+    if (modalLogin.style.display == 'none' ) {
+        modalLogin.style.display = 'block' 
+    }else{
+        modalLogin.style.display = 'none' 
+    }
+} 
+function signupModal(){
+    modalLogin.style.display = 'none' 
+    if (modalSignup.style.display == 'none' ) {
+        modalSignup.style.display = 'block' 
+    }else{
+        modalSignup.style.display = 'none' 
+    }
+}  
+
+window.onclick = function(event) {
+    if (event.target == modalLogin) {
+      modalLogin.style.display = "none";
+    }else if (event.target == modalSignup) { 
+        modalSignup.style.display = "none";
+    }
+
+}
+
+
 // Function to select DOM element
 var select = (el) =>{
     return document.querySelector(el)
