@@ -62,12 +62,15 @@
                     </div>
                     <div class="form-group">
                         <label for="Technology"> Technology: </label>
-                        <input type="text" id="technology" placeholder="" required>
+                        <input type="text" id="technology" maxlength="13"  placeholder="" required>
+                    </div>
+                    <div class="warning "  align="center">
+                        <small id="errorMsg"> * Please Provide all Fields  </small>
                     </div>
                     <div class="form-group actionBtn">
                         <button type="submit" onclick="registerUser()" id="register" >Register</button>
                     </div>
-                </div>
+                </div> 
             </div>
 
             <!-- <hr style="width: 70%;"> -->
@@ -148,9 +151,43 @@
         </div>
     </div>
 
-    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBDCvEds9SLtgxs2zDneX6XVU-n4VmZy_E",
+        authDomain: "gdg-umuahia-firebase-cod-47fcd.firebaseapp.com",
+        databaseURL: "https://gdg-umuahia-firebase-cod-47fcd.firebaseio.com",
+        projectId: "gdg-umuahia-firebase-cod-47fcd",
+        storageBucket: "gdg-umuahia-firebase-cod-47fcd.appspot.com",
+        messagingSenderId: "824875531522",
+        appId: "1:824875531522:web:ae30d02d17fde493ce961b",
+        measurementId: "G-V179QTDNQS"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+    const storage = firebase.storage();
+
+    // db.settings({
+    //     timestampsInSnapshots: true
+    // })
+    </script>
     
     <script src="js/style.js" defer></script>
+    <script src="js/firebaseDb.js" defer></script>
     <!-- <script src="js/captureImage.js" defer></script> -->
 </body>
 </html>
