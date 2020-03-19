@@ -3,7 +3,7 @@ const createDb = 'Friend'
 
 // This is to check if there is a database already, and render what waas saved in it 
 if (db.collection(createDb)) {
-    //onSnapshots is a promise which monitors the selected database and observe when the selected change occurs
+    //onSnapshots is a promise which monitors the selected database and returns when the selected change occurs
     // we have modified (for update changes), added, and deleted
     db.collection(createDb).onSnapshot(res => {
         const changes = res.docChanges()
@@ -51,23 +51,23 @@ if (db.collection(createDb)) {
 }
 
 // Previewing the selected image, the file's extension, size etc, could also be checked in this function
-let rawImg;
+let rawImg; //This contain's the base64 nomenclature of the image file 
+let file; // This will contain the full file of the image gotten from the input field
 function checkImg(){ 
-   var file = select('#capture').files[0]
+   file = select('#capture').files[0]
    var img = select('#image') 
 
    var reader = new FileReader()
    reader.onload = (e)=> {
        img.src = reader.result
-        rawImg = img.src
-       console.log(rawImg)
+        rawImg = img.src 
    }
    reader.readAsDataURL(file) 
 
 }
 
 // The function to register the friend to the database
-function registerUser(){  
+function registerUser(){   
 
     var userDetails = {
         image: rawImg,
@@ -90,10 +90,35 @@ function registerUser(){
         return 
     } 
 
+    // Adding the user details to the firestore database. 
+    // This process returns a promise, which, using the then() to chain another asynchronous call on it
+    // The call will upload the image from our file, earlier declared from the input field
+    // Retrieving the doc id, which will serve as a reference key to save the image in the storage
+    // Once the image is successfully saved, a then() is chained to the promise, 
+    // The response will be used to get the downloadUrl, which will then be used to update the database  
+
+    let imgUrl, 
+        id;
+
     db.collection(createDb).add(userDetails)
     .then(res =>{
-        // console.log(res)
-        console.log('User Created')
+       id = res.id
+       return id
+    })
+    .then( id =>{
+        // file was declared above 
+        return firebase.storage().ref(createDb).child(id).put(file)
+    })
+    .then( fileData =>{ 
+        // the promise 'fileData' returned, will be used to get the downloadUrl
+        return fileData.ref.getDownloadURL();
+    })
+    .then(downloadUrl =>{
+        imgUrl = downloadUrl;
+
+        db.collection(createDb).doc(id).update({
+            image: imgUrl
+        })
     })
     .catch(err =>{
         console.log('The err: '+ err)
